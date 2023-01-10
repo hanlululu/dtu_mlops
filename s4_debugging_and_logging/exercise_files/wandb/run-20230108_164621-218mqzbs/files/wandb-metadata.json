@@ -1,0 +1,42 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.9.15",
+    "heartbeatAt": "2023-01-08T15:46:22.311260",
+    "startedAt": "2023-01-08T15:46:21.682690",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/hanluhe/Documents/MLops/dtu_mlops/s4_debugging_and_logging/exercise_files/vae_mnist_working.py",
+    "codePath": "s4_debugging_and_logging/exercise_files/vae_mnist_working.py",
+    "git": {
+        "remote": "https://github.com/hanlululu/dtu_mlops.git",
+        "commit": "8807b51469b6bd76a51ce5033c389e8e5c1fa278"
+    },
+    "email": "s183909@student.dtu.dk",
+    "root": "/Users/hanluhe/Documents/MLops/dtu_mlops",
+    "host": "hanlus-iphone.home",
+    "username": "hanluhe",
+    "executable": "/Users/hanluhe/opt/anaconda3/envs/mlops_mnist/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2400,
+        "min": 2400,
+        "max": 2400
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2400,
+            "min": 2400,
+            "max": 2400
+        }
+    ],
+    "disk": {
+        "total": 228.27386474609375,
+        "used": 8.25729751586914
+    },
+    "memory": {
+        "total": 8.0
+    }
+}

@@ -10,6 +10,8 @@ import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from torchvision.datasets import MNIST
 from torchvision.utils import save_image
+import wandb
+wandb.init(project='mnist_test')
 
 # Model Hyperparameters
 dataset_path = 'datasets'
@@ -99,6 +101,8 @@ def loss_function(x, x_hat, mean, log_var):
 
 optimizer = Adam(model.parameters(), lr=lr)
 
+# wandb
+wandb.watch(model,log_freq=100)
 
 print("Start training VAE...")
 model.train()
@@ -117,6 +121,8 @@ for epoch in range(epochs):
         
         loss.backward()
         optimizer.step()
+
+        wandb.log({"train_losses": loss})
     print("\tEpoch", epoch + 1, "complete!", "\tAverage Loss: ", overall_loss / (batch_idx*batch_size))    
 print("Finish!!")
 
@@ -130,8 +136,9 @@ with torch.no_grad():
         break
 
 save_image(x.view(batch_size, 1, 28, 28), 'orig_data.png')
+wandb.log({"orig_data" : [wandb.Image(x.view(batch_size, 1, 28, 28))]})
 save_image(x_hat.view(batch_size, 1, 28, 28), 'reconstructions.png')
-
+wandb.log({"reconstrcuted_data" : [wandb.Image(x_hat.view(batch_size, 1, 28, 28))]})
 # Generate samples
 with torch.no_grad():
     noise = torch.randn(batch_size, latent_dim).to(DEVICE)

@@ -1,0 +1,11 @@
+# Model Hyperparameters
+dataset_path: '~/datasets'
+cuda : False
+DEVICE : torch.device("cuda" if cuda else "cpu")
+batch_size : 50
+x_dim  : 784
+hidden_dim : 400
+latent_dim : 20
+lr : 1e-3
+epochs : 5
+seed: 20
